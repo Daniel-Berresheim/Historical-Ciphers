@@ -2,12 +2,10 @@
 
 let data = 
 {
-	data1: "String",
+	data1: "Test",
 	data2: 10
 };
 
-console.log(data.data1);
-
-let message = "test message to encrypt";
+let message = "todo";
 
 console.log(message);
