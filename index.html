@@ -10,28 +10,70 @@
 		<meta name="author" content="Daniel Berresheim">
 		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
 		
+		<script src="index.js" defer></script>
+		
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<header class="site-header">
-			<h1>Historical Ciphers</h1>
+			<li data-tab-target="#home" class="active_tab"><h1>Historical Ciphers</h1></li>
 		</header>
+		
 		<nav class="site-nav">
 			<ul class="site-nav-list">
-				<li><a href="index.html">Historical Ciphers</a></li>
-				<li><a href="shift-ciphers.html">Shift Ciphers</a></li>
-				<li><a href="mono-alphabetic-substitution-ciphers.html">Mono-alphabetic Substitution Cipher</a></li>
-				<li><a href="vigenere-ciphers.html">Vigénere Ciphers</a></li>
-				<li><a href="enigma.html">Enigma</a></li>
+				<li data-tab-target="#general-shift-cipher" class="tab"><h4>General Shift Cipher</h4></li>
+				<li data-tab-target="#caesar-cipher" class="tab"><h4>Caesar Cipher</h4></li>
+				<li data-tab-target="#rot-13" class="tab"><h4>Rot-13</h4></li>
+				
+				<li data-tab-target="#substitution-ciphers" class="tab"><h4>Substitution Ciphers</h4></li>
+				<li data-tab-target="#vigenere-ciphers" class="tab"><h4>Vigénere Ciphers</h4></li>
+				<li data-tab-target="#enigma" class="tab"><h4>Enigma</h4></li>
 			</ul>
 		</nav>
-		<main class="site-main">
-			
-		</main>
-		<footer class="site-footer">
-			<a href="impressum.html" target="_blank">Impressum</a>
-		</footer>
 		
-		<script src="index.js"></script>
+		<div class="site-nav-content">
+			<div id="home" data_tab_content class="active">
+				<h2>Historical Ciphers</h2>
+				<p>In the past, encryption schemes had little in common with modern standards. Little to none access to powerful computers made it easy to only rely on obscure algorithms, which means that they often didnt even use a secret key.<br>
+				Today, those algorithms should not be used for critical applications. Still they are a good way to understand the basics of encryption.</p>
+				<p>This tool is meant to introduce various basic substitution ciphers of the past.</p>
+			</div>
+			
+			<div id="general-shift-cipher" data_tab_content>
+				<h2>General Shift Cipher</h2>
+				<p>Comming Soon</p>
+			</div>
+			<div id="caesar-cipher" data_tab_content>
+				<h2>Caesar Cipher</h2>
+				<p>Comming Soon</p>
+			</div>
+			<div id="rot-13" data_tab_content>
+				<h2>Rot-13</h2>
+				<p>Comming Soon</p>
+			</div>
+			
+			<div id="substitution-ciphers" data_tab_content>
+				<h2>Substitution Ciphers</h2>
+				<p>Comming Soon</p>
+			</div>
+			<div id="vigenere-ciphers" data_tab_content>
+				<h2>Vigénere Ciphers</h2>
+				<p>Comming Soon</p>
+			</div>
+			<div id="enigma" data_tab_content>
+				<h2>Enigma</h2>
+				<p>Comming Soon</p>
+			</div>
+			
+			<div id="impressum" data_tab_content>
+				<h2>Impressum</h2>
+				<p>This site was created by Daniel Berresheim. </br>It is only meant for personal use.</p>
+			</div>
+		</div>
+		
+		<footer class="site-footer">
+			<li data-tab-target="#impressum"><h4>Impressum</h4></li>
+		</footer>
+
 	</body>
 </html>
