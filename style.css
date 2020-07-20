@@ -7,14 +7,52 @@ body{
 	background-color:RoyalBlue;
 	padding: 10px 0px;
 }
-
 main
 {
 	margin:20px 10px 10px 10px;
 	background-color:AliceBlue;
 	border-radius:10px;
-	padding: 10px;
+	padding: 20px;
 }
+main p, .settings-container p{font-size:20px;}
+
+/*Cipher Container*/
+.cipher-container
+{
+	margin:10px;
+	padding: 10px;
+	background-color:AliceBlue;
+	border-radius:20px;
+	display:flex;
+	flex-direction:row;
+}
+.settings-container, .input-container, .output-container
+{
+	margin:10px;
+	background-color:LightSteelBlue;
+	border-radius:10px;
+	padding: 20px;
+	height:400px;
+}
+[input-textfield], [output-textfield]
+{
+	background-color:AliceBlue;
+	border-radius:10px;
+	padding: 20px;
+	height:310px;
+	width:520px;
+}
+.settings-container > button
+{
+	cursor:pointer;
+	font-size:20px;
+	border: none;
+	background-color:AliceBlue;
+	padding: 1px 4px;
+	border-radius:5px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.2);
+}
+.settings-container > button:hover{background-color:LightSteelBlue;}
 
 /*Navigation Bar*/
 nav
@@ -51,10 +89,7 @@ nav ul li
 	color: Black;
 	border-radius:4px;
 }
-.nav-item:hover
-{
-	background-color:LightSteelBlue;
-}
+.nav-item:hover{background-color:LightSteelBlue;}
 nav ul li ul
 {
 	display:none;
@@ -65,10 +100,7 @@ nav ul li ul
 	padding: 5px;
 	border-radius:0px 0px 4px 4px;
 }
-nav ul li:hover ul
-{
-	display:block;
-}
+nav ul li:hover ul{display:block;}
 nav ul li ul li
 {
 	width: 300px;

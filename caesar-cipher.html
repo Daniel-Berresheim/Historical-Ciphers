@@ -3,8 +3,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Historical Ciphers</title>
+		<title>Historical Ciphers | General Shift Ciphers</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="utf-8">
+		
 	</head>
 	<body>
 	
@@ -42,12 +44,50 @@
 		<main>
 			<h1>Caesar Cipher</h1></br>
 				
-			<p>Lorem ipsum</p></br></br>
+			<p>One of the oldest cryptographical schemes. Caesar Cipher is a simple Shift Cipher, which uses k=3 as a fixed key length.</p></br></br>
+			
 		</main>
+		
+		<div class="cipher-container">
+			<div class="settings-container">
+				<h2>Settings</h2></br>
+				<h4>Alphabet:</h4><textarea style="width:550px;" name="alphabet" textfield-alphabet>ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea></br></br> <!--TODO: add drop down menu to select template-->
+				<button button-encrypt>Encrypt</button>
+				<button button-decrypt>Decrypt</button></br>
+			</div>
+			<div class="input-container">
+				<h2>Plaintext</h2></br>
+				<textarea name="plaintext" input-textfield></textarea>
+			</div>
+			<div class="output-container">
+				<h2>Ciphertext</h2></br>
+				<textarea name="ciphertext" output-textfield></textarea>
+			</div>
+		</div>
 		
 		<!--Footer-->
 		<footer><a href="impressum.html" style="padding:10px;">Impressum</a></footer>
 		
+		<script src="general-shift-cipher.js"></script>
+		<script src="caesar-cipher.js"></script>
+		<script>
+			
+			// settings textfields
+			const alphabetTextfield = document.querySelector("[textfield-alphabet]");
+			
+			// submit buttons
+			const encryptButton = document.querySelector("[button-encrypt]");
+			const decryptButton = document.querySelector("[button-decrypt]");
+			
+			// message textfields
+			const inputTextfield = document.querySelector("[input-textfield]");
+			const outputTextfield = document.querySelector("[output-textfield]");
+			
+			const caesarCipher = new CaesarCipher(inputTextfield, outputTextfield);
+			
+			encryptButton.addEventListener("click", ()=>{caesarCipher.encrypt(alphabetTextfield.value, inputTextfield.value)})
+			decryptButton.addEventListener("click", ()=>{caesarCipher.decrypt(alphabetTextfield.value, outputTextfield.value)})
+		</script>
 		
 	</body>
 </html>
