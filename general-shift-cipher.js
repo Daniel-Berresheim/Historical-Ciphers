@@ -21,7 +21,7 @@ class GeneralShiftCipher
 			if(pos==-1) result = result.concat(letter);
 			else
 			{
-				pos=(pos+shift)%alphabet.length;
+				pos=Math.abs(pos+shift)%alphabet.length;
 			
 				result = result.concat(alphabet.charAt(pos));
 			}
@@ -42,7 +42,7 @@ class GeneralShiftCipher
 			if(pos==-1) result = result.concat(letter);
 			else
 			{
-				pos=(pos-shift)%alphabet.length;
+				pos=Math.abs(pos-shift)%alphabet.length;
 			
 				result = result.concat(alphabet.charAt(pos));
 			}
