@@ -30,18 +30,27 @@ main p, .settings-container p{font-size:20px;}
 .settings-container, .input-container, .output-container
 {
 	margin:10px 10px 10px 10px;
+	width: 30vw;
 	padding:10px;
 	background-color:LightSteelBlue;
 	border-radius:20px;
 }
 [input-textfield], [output-textfield]
 {
-	margin:10px 10px 10px 10px;
-	padding: 20px;
+	margin:2vw 2vw 2vw 2vw;
 	background-color:AliceBlue;
 	border-radius:10px;
 	height:310px;
+	width: 80%;
 }
+
+[textfield-alphabet], [textfield-key]
+{
+	height:100px;
+	margin:2vw 2vw 2vw 2vw;
+	width: 80%;
+}
+
 .settings-container > button
 {
 	cursor:pointer;
