@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Historical Ciphers</title>
+		<title>Historical Ciphers | Mono-alphabetic Substitution Cipher</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<meta charset="utf-8">
+		
 	</head>
 	<body>
 	
@@ -24,31 +25,70 @@
 		</li>
 		<li><p class="nav-item">Substitution Ciphers</p>
 			<ul>
-				<li><a href="general-substitution-cipher.html" class="nav-item" target=_parent>General Substitution Cipher</a></li>
+				<li><a href="general-substitution-cipher.html" class="nav-item" target=_parent style="color: Grey;">General Substitution Cipher</a></li>
 				<li><a href="mono-alphabetic-substitution-cipher.html" class="nav-item" target=_parent>Mono-Alphabetic Substitution Cipher</a></li>
 			</ul>
 		</li>
-		<li><p class="nav-item">Vigénere Ciphers</p>
+		<li><p class="nav-item" style="color: Grey;">Vigénere Ciphers</p>
 			<ul>
-				<li><a href="general-vigenere-cipher.html" class="nav-item" target=_parent>General Vigènere Cipher</a></li>
-				<li><a href="one-time-pad.html" class="nav-item" target=_parent>One Time Pad</a></li>
+				<li><a href="general-vigenere-cipher.html" class="nav-item" target=_parent style="color: Grey;">General Vigènere Cipher</a></li>
+				<li><a href="one-time-pad.html" class="nav-item" target=_parent style="color: Grey;">One Time Pad</a></li>
 			</ul>
 		</li>
-		<li><a href="enigma.html" class="nav-item" target=_parent>Enigma</a></li>
+		<li><a href="enigma.html" class="nav-item" target=_parent style="color: Grey;">Enigma</a></li>
 		
 		<li><a href="impressum.html" class="nav-item" target=_parent>About</a></li>
 	</ul>
 </nav>
 		
 		<main>
-			<h1>Mono-Alphabetic Substitution Cipher.html</h1></br>
+			<h1>Mono-alphabetic Substitution Cipher</h1></br>
 				
-			<p>Coming soon</p></br></br>
+			<p>This implementation of a substitution cipher maps each letter with its encryption.</p></br></br>
 		</main>
+		
+		<div class="cipher-container">
+			<div class="settings-container">
+				<h2>Settings</h2></br>
+				<h4>Substitution-Table:</h4><textarea textfield-substitution-table>{(A,F),(B,D),(C,A)}</textarea></br></br> <!--TODO: add drop down menu to select template-->
+				<button button-encrypt>Encrypt</button>
+				<button button-decrypt>Decrypt</button></br>
+			</div>
+			<div class="input-container">
+				<h2>Plaintext</h2>Under Construction</br>
+				<noscript>Requires Java-Script</noscript>
+				<textarea input-textfield></textarea>
+			</div>
+			<div class="output-container">
+				<h2>Ciphertext</h2></br>
+				<noscript>Requires Java-Script</noscript>
+				<textarea output-textfield>Under Construction</textarea>
+			</div>
+		</div>
 		
 		<!--Footer-->
 		<footer><a href="impressum.html" style="padding:10px;">Impressum</a></footer>
 		
+		
+		<script src="mono-alphabetic-substitution-cipher.js"></script>
+		<script>
+			
+			// settings textfields
+			const substitutionTableTextfield = document.querySelector("[textfield-substitution-table]");
+			
+			// submit buttons
+			const encryptButton = document.querySelector("[button-encrypt]");
+			const decryptButton = document.querySelector("[button-decrypt]");
+			
+			// message textfields
+			const inputTextfield = document.querySelector("[input-textfield]");
+			const outputTextfield = document.querySelector("[output-textfield]");
+			
+			const monoAlphabeticSubstitutionCipher = new MonoAlphabeticSubstitutionCipher(inputTextfield, outputTextfield);
+			
+			encryptButton.addEventListener("click", ()=>{monoAlphabeticSubstitutionCipher.encrypt(substitutionTableTextfield.value, inputTextfield.value)})
+			decryptButton.addEventListener("click", ()=>{monoAlphabeticSubstitutionCipher.decrypt(substitutionTableTextfield.value, outputTextfield.value)})
+		</script>
 		
 	</body>
 </html>
